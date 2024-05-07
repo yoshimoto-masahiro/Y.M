@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang=ja>
+
+<head>
+  <style type="text/css">
+    /*ヘッダー１の設定を指定*/
+    h1 {
+      position: relative;
+      padding: 0.25em 0;
+    }
+
+    h1:after {
+      content: "";
+      display: block;
+      height: 4px;
+      background: -webkit-linear-gradient(to right, rgb(21, 255, 220), transparent);
+      background: linear-gradient(to right, rgb(142, 247, 255), transparent);
+    }
+
+    .box1 {
+      padding: 0.5em 1em;
+      margin: 2em 0;
+      font-weight: bold;
+      color: #6091d3;
+      /*文字色*/
+      background: #FFF;
+      border: solid 3px #6091d3;
+      /*線*/
+      border-radius: 10px;
+      /*角の丸み*/
+      display: inline-block;
+    }
+
+    .box1 p {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <meta charset=”UTF-8″>
+  <meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
+  <title>nurinubiホームページ</title>
+</head>
+
+<body>
+  <h1>社員紹介</h1>
+  <h2>管理部</h2>
+  <p>義本将大</p>
+  <h1>会社概要</h1>
+
+  <p>実際に物事を書くときはこうする</p>
+  <div class="box1">
+    <ul>
+      <li>リストを表示する</li>
+      <li>わかりやすい文章として一文で書く</li>
+      <li>かかない</li>
+    </ul>
+  </div>
+  <p>pは文章の段落（paragraph）を表します。</p>
+  <div class="box1">
+    <ol>
+      <li>olは番号付きのリスト（ordered list）を表すこと</li>
+      <li>番号無しのリストにしたい場合は、ul（unordered list）を使います</li>
+      <li>li（listitem）はolやulの中でリスト内の項目を表します</li>
+    </ol>
+  </div>
+</body>
+
+</html>
