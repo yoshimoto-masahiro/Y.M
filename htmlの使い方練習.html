@@ -6,20 +6,38 @@
     /*ヘッダー１の設定を指定*/
     h1 {
       position: relative;
-      padding: 0.25em 0;
+      padding-left: 25px;
+    }
+
+    h1:before {
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 15px transparent;
+      border-bottom: solid 15px rgb(119, 195, 223);
     }
 
     h1:after {
-      content: "";
-      display: block;
-      height: 4px;
-      background: -webkit-linear-gradient(to right, rgb(21, 255, 220), transparent);
-      background: linear-gradient(to right, rgb(142, 247, 255), transparent);
+      position: absolute;
+      content: '';
+      bottom: -3px;
+      left: 10px;
+      width: 100%;
+      border-bottom: solid 3px rgb(119, 195, 223);
+    }
+
+    h1:first-letter {
+      font-size: 2em;
+      color: #0004ff;
     }
 
     .box1 {
-      padding: 0.5em 1em;
-      margin: 2em 0;
+      padding: 0.5em 1.5em;
+      margin:0 0.5em;
       font-weight: bold;
       color: #6091d3;
       /*文字色*/
@@ -29,11 +47,181 @@
       border-radius: 10px;
       /*角の丸み*/
       display: inline-block;
+      /*-------------------------------------------------------------*/
+      transition: all .3s;
+      /*-------------------------------------------------------------*/
     }
 
+    .box1:hover {
+      box-shadow: 0 7px 10px rgba(0, 0, 0, 0.3);
+      border-color: transparent;
+    }
+
+    /*2-------------------------------------------------------------------------2*/
+    .btnlinestretches2 {
+      /*線の基点とするためrelativeを指定*/
+      position: relative;
+      /*ボタンの形状*/
+      color: #333;
+      padding: 10px 30px;
+
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+    }
+
+    /*線の設定*/
+    .btnlinestretches2::before,
+    .btnlinestretches2::after {
+      content: '';
+      /*絶対配置で線の位置を決める*/
+      position: absolute;
+      /*事前に出現させる線の形状*/
+      border: solid #333;
+      width: 10px;
+      height: 10px;
+      /*アニメーションの指定*/
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btnlinestretches2::before {
+      /*事前に出現させる線の位置*/
+      top: 0;
+      left: 0;
+      /*事前に出現させる線の形状*/
+      border-width: 2px 0 0 2px;
+    }
+
+    .btnlinestretches2::after {
+      /*事前に出現させる線の位置*/
+      bottom: 0;
+      right: 0;
+      /*事前に出現させる線の形状*/
+      border-width: 0 2px 2px 0;
+    }
+
+    /*hoverした際の線の形状*/
+    .btnlinestretches2:hover::before,
+    .btnlinestretches2:hover::after {
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border-color: #666
+    }
+
+    .btnlinestretches2 {
+      /*線の基点とするためrelativeを指定*/
+      position: relative;
+      /*ボタンの形状*/
+      color: #333;
+      padding: 10px 30px;
+
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+    }
+
+    /*線の設定*/
+    .btnlinestretches2::before,
+    .btnlinestretches2::after {
+      content: '';
+      /*絶対配置で線の位置を決める*/
+      position: absolute;
+      /*事前に出現させる線の形状*/
+      border: solid #333;
+      width: 10px;
+      height: 10px;
+      /*アニメーションの指定*/
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btnlinestretches2::before {
+      /*事前に出現させる線の位置*/
+      top: 0;
+      left: 0;
+      /*事前に出現させる線の形状*/
+      border-width: 2px 0 0 2px;
+    }
+
+    .btnlinestretches2::after {
+      /*事前に出現させる線の位置*/
+      bottom: 0;
+      right: 0;
+      /*事前に出現させる線の形状*/
+      border-width: 0 2px 2px 0;
+    }
+
+    /*hoverした際の線の形状*/
+    .btnlinestretches2:hover::before,
+    .btnlinestretches2:hover::after {
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border-color: #666
+    }
+
+    .btnlinestretches2 p {
+      margin: 10px 0 10px 0;
+    }
+
+    /*2-------------------------------------------------------------------------2*/
     .box1 p {
       margin: 0;
       padding: 0;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      /*ボタンの形状*/
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid #00eaff;
+      /* ボーダーの色と太さ */
+      padding: 10px 30px;
+      text-align: center;
+      outline: none;
+      /*アニメーションの指定*/
+      transition: ease .2s;
+    }
+
+    /*ボタン内spanの形状*/
+    .btn span {
+      position: relative;
+      z-index: 3;
+      /*z-indexの数値をあげて文字を背景よりも手前に表示*/
+      color: #333;
+    }
+
+    .btn:hover span {
+      color: #fff;
+    }
+
+    /*== 背景が流れる（左から右） */
+    .bgleft:before {
+      content: '';
+      /*絶対配置で位置を指定*/
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      /*色や形状*/
+      background: #333;
+      /*背景色*/
+      width: 100%;
+      height: 100%;
+      /*アニメーション*/
+      transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+      transform: scale(0, 1);
+      transform-origin: right top;
+    }
+
+    /*hoverした際の形状*/
+    .bgleft:hover:before {
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
   </style>
   <meta charset=”UTF-8″>
@@ -44,7 +232,7 @@
 <body>
   <h1>社員紹介</h1>
   <h2>管理部</h2>
-  <p>義本将大</p>
+  <p></p>
   <h1>会社概要</h1>
 
   <p>実際に物事を書くときはこうする</p>
@@ -62,6 +250,16 @@
       <li>番号無しのリストにしたい場合は、ul（unordered list）を使います</li>
       <li>li（listitem）はolやulの中でリスト内の項目を表します</li>
     </ol>
+  </div>
+  <p></p>
+  <div class="btn bgleft">
+
+    <span>ここまで順調</span>
+
+  </div>
+  <p></p>
+  <div class="btnlinestretches2">
+    <p>ここまで順調その２</p>
   </div>
 </body>
 
